@@ -11,6 +11,7 @@ namespace c_sharp_node_editor
             node.Parameter = "Hello World!";
 
             RawNode rawNode = new RawNode();
+            rawNode.RawCode = "Console.Read();";
 
             StringNode stringNode = new StringNode();
             stringNode.StringValue = "This is another string";
@@ -26,11 +27,15 @@ namespace c_sharp_node_editor
             outputFromDoubleNode.Parameter = doubleNode;
 
             CodeStack stack = new CodeStack();
-            stack.Push(node);
-            stack.Push(rawNode);
-            stack.Push(outputFromStringNode);
             stack.Push(outputFromDoubleNode);
+            stack.Push(outputFromStringNode);
+            stack.Push(rawNode);
+            stack.Push(new RawNode() { RawCode = "Console.WriteLine(\"This line and the next line is of raw code\");"});
+            stack.Push(node);
             Console.WriteLine(stack.PopAllAndGetCodeString());
+            
+
+
         }
     }
 }

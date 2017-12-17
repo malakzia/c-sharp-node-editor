@@ -22,23 +22,23 @@
                 {
                     if (nodeParameter.IsParameter())
                     {
-                        return "Console.WriteLine(" + nodeParameter.GetNodeOutput() + ")";
+                        return "Console.WriteLine(" + nodeParameter.GetNodeOutput() + ");";
                     }
                     else
                     {
-                        return "Console.WriteLine(\"" + nodeParameter.GetNodeOutput() + "\")";
+                        return "Console.WriteLine(\"" + nodeParameter.GetNodeOutput() + "\");";
 
                     }
                 }
                 else
                 {
-                    return "Console.WriteLine(\"" + nodeParameter.GetNodeOutput() + "\")";
+                    return "Console.WriteLine(\"" + nodeParameter.GetNodeOutput() + "\");";
 
                 }
             }
             catch (System.Exception)
             {
-                return "Console.WriteLine(\"" + Parameter + "\")";
+                return "Console.WriteLine(\"" + Parameter + "\");";
 
             }
         }
